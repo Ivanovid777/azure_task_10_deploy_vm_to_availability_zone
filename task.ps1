@@ -11,10 +11,12 @@ $vmName = "matebox"
 $vmImage = "Ubuntu2204"
 $vmSize = "Standard_B1s"
 
+New-AzResourceGroup -Name $resourceGroupName -Location $location -Force
+
 New-AzVm `
 -ResourceGroupName $resourceGroupName `
 -Name "${vmName}1" `
--Zone 1 `
+-Zone "1" `
 -Location $location `
 -Image $vmImage `
 -Size $vmSize `
@@ -26,7 +28,7 @@ New-AzVm `
 New-AzVm `
 -ResourceGroupName $resourceGroupName `
 -Name "${vmName}2" `
--Zone 2 `
+-Zone "2" `
 -Location $location `
 -Image $vmImage `
 -Size $vmSize `
